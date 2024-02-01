@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import TaskContext from './TaskContext';
 
 const TaskState = (props) => {
-  const host = "http://localhost:4000";
+  const host = "https://taskbackend-1792.onrender.com/";
   const [tasks, setTasks] = useState([]);
 
   const getTasks = async () => {
