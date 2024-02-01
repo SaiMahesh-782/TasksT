@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const loginUser = require('../middleware/loginUser');
-const Task = require('../models/Tasks');
+const Task = require('../Models/Tasks');
 const User=require('../Models/User')// Adjust the path based on your project structure
 
 

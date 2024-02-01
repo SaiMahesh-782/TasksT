@@ -85,7 +85,7 @@ const TaskState = (props) => {
       });
 
       if (res.ok) {
-        const updatedTask = await res.json();
+   
         setTasks((prevTasks) => {
           return prevTasks.map((task) =>
             task._id === id ? { ...task, title,  description, assignedto, deadline, status } : task
@@ -103,12 +103,6 @@ const TaskState = (props) => {
     getTasks();
   }, []);
 
-
-
-  // This function should be placed in a utility file or API service on the client-side
-
-
-   
  
 
   return (

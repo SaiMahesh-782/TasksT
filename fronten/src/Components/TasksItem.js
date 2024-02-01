@@ -8,7 +8,7 @@ import { MdDelete, MdEdit } from 'react-icons/md';
 const Tasks = () => {
   const context = useContext(TaskContext);
   const { tasks, getTasks, deleteTask, editTask } = context;
-  const [users, setUsers] = useState([]);
+  const [users] = useState([]);
   const [editingTask, setEditingTask] = useState(null);
 
   const [newTask, setNewTask] = useState({

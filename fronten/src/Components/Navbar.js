@@ -1,17 +1,15 @@
-import React, { useContext ,useState,useEffect} from 'react';
+import React, { useState,useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import TaskContext from '../Context/Tasks/TaskContext';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const context=useContext(TaskContext);
+  
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/SignIn');
   };
   const [loggedInUserName, setLoggedInUserName] = useState(null);
-  const [users, setUsers] = useState([]);
 
 
   const fetchUserInfo = async (token) => {
