@@ -8,6 +8,7 @@ import SignIn from './Components/SignIn';
 import TaskState from './Context/Tasks/TasksState';
 import Tasks from './Components/TasksItem';
 import CreateTask from './Components/CreateTask';
+import Home from './Home';
 
 function App() {
   return (
@@ -28,11 +29,13 @@ const AppRouter= createBrowserRouter([
     path:"/",
     element:<App/>,
     children:[
-      
+      {
+        path:"/",
+        element:<Home/>
+      },
       {
       path:"/Tasks",
       element:<Tasks/>
-
     },
     {
       path:"/createTask",
