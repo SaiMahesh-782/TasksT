@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import TaskContext from './TaskContext';
 
 const TaskState = (props) => {
-  const host = "https://taskbackend-1792.onrender.com/";
+  const host = "https://mern-backend-25el.onrender.com";
   const [tasks, setTasks] = useState([]);
 
   const getTasks = async () => {
@@ -19,6 +19,8 @@ const TaskState = (props) => {
       if (res.ok) {
         const tasksData = await res.json();
         setTasks(tasksData);
+        console.log(tasksData);
+     
       } else {
         console.error('Error getting tasks:', res.status, res.statusText);
       }

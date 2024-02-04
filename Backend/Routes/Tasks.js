@@ -9,22 +9,27 @@ const User=require('../Models/User')// Adjust the path based on your project str
 router.get('/getTasks', loginUser, async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.user.userId });
+    console.log(user._id)
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-
+    if(user._id==="65bf9b0a539871fb1826d431"){
+      const tasks=await Task.find()
+      res.json(tasks);
+      console.log(tasks)
+    }
+    else{
     const tasks = await Task.find({ assignedto: user.name }).populate('assignee', 'name').lean();
     
-    // Now, tasks will have the `assignee` field populated with user names
     res.json(tasks);
-
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 });
 
-module.exports = router;
+
 
 
 // Add Task
@@ -43,6 +48,7 @@ router.post('/addTask', loginUser, async (req, res) => {
 
     const savedTask = await task.save();
     res.json(savedTask);
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal Server Error' });
