@@ -10,7 +10,7 @@ app.use(cors())
 app.use('/api/auth', require('./Routes/auth'));
 app.use('/api/Tasks', require('./Routes/Tasks'));
 
-const port = process.env.PORT ;
+const port = process.env.PORT||4000 ;
 
 const server = app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
