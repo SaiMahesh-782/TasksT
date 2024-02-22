@@ -34,11 +34,10 @@ router.post('/SignUp', [
       password: req.body.password,
       // Remove confirmpassword from here
     });
-    console.log(newUser._id )
+  
 
     const token = jwt.sign({ userId: newUser._id }, jwt_key, { expiresIn: '24h' });
     res.status(201).json({ success: true, user: newUser, token });
-    console.log(token)
   } catch (error) {
     console.error(error);
     if (error.code === 11000) {

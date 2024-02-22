@@ -13,7 +13,7 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`http://localhost:4000/api/auth/SignIn`, {
+    const res = await fetch(`https://mern-backend-25el.onrender.com/api/auth/SignIn`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
